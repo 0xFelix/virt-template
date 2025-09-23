@@ -28,7 +28,22 @@ import (
 // A subresource cannot be served without a storage for its parent resource.
 type VirtualMachineTemplate struct {
 	metav1.TypeMeta   `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty,omitzero"`
+	metav1.ObjectMeta `json:"metadata,omitempty,omitzero" protobuf:"bytes,1,opt,name=metadata"`
+}
+
+// +kubebuilder:object:root=true
+
+// ProcessedVirtualMachineTemplate is the object served by the /process and /create subresources.
+// It's not a standalone resource but represents a process or create action on the parent VirtualMachineTemplate resource.
+type ProcessedVirtualMachineTemplate struct {
+	metav1.TypeMeta   `json:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty,omitzero" protobuf:"bytes,1,opt,name=metadata"`
+
+	// message is an optional instructional message from the processed template.
+	// This field should inform the user how to utilize the newly created resource.
+	Message string `json:"message,omitempty,omitzero" protobuf:"bytes,2,opt,name=message"`
+
+	VirtualMachine virtv1.VirtualMachine `json:"virtualMachine" protobuf:"bytes,3,name=virtualMachine"`
 }
 
 // +kubebuilder:object:root=true
@@ -36,20 +51,24 @@ type VirtualMachineTemplate struct {
 // ProcessOptions are the options used when processing a VirtualMachineTemplate.
 type ProcessOptions struct {
 	metav1.TypeMeta   `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty,omitzero"`
+	metav1.ObjectMeta `json:"metadata,omitempty,omitzero" protobuf:"bytes,1,opt,name=metadata"`
 
-	Foo string `json:"foo,omitempty"`
+	// parameters is an optional array of Parameters used during the
+	// Template to Config transformation.
+	Parameters []Parameter `json:"parameters,omitempty" protobuf:"bytes,2,rep,name=parameters"`
 }
 
-// +kubebuilder:object:root=true
+// Parameter defines a name/value variable that is to be processed during
+// the Template to Config transformation.
+type Parameter struct {
+	// name must be set and it can be referenced in Template
+	// Items using ${PARAMETER_NAME}. Required.
+	Name string `json:"name" protobuf:"bytes,1,name=name"`
 
-// ProcessedVirtualMachineTemplate is the object served by the /process subresource.
-// It's not a standalone resource but represents a process action on the parent VirtualMachineTemplate resource.
-type ProcessedVirtualMachineTemplate struct {
-	metav1.TypeMeta   `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty,omitzero"`
-
-	VirtualMachine *virtv1.VirtualMachine `json:"virtualMachine,omitempty"`
+	// value holds the Parameter data. If specified, the generator will be
+	// ignored. The value replaces all occurrences of the Parameter ${Name}
+	// expression during the Template to Config transformation. Required.
+	Value string `json:"value" protobuf:"bytes,2,name=value"`
 }
 
 func init() {
