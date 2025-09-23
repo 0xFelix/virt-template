@@ -61,9 +61,9 @@ func (p *ProcessREST) Connect(ctx context.Context, id string, _ runtime.Object, 
 		r.Object(
 			http.StatusOK,
 			&subresourcesv1alpha1.ProcessedVirtualMachineTemplate{
-				VirtualMachine: &virtv1.VirtualMachine{
+				VirtualMachine: virtv1.VirtualMachine{
 					ObjectMeta: metav1.ObjectMeta{
-						Name: processOptions.Foo,
+						Name: processOptions.Parameters[0].Value,
 					},
 				},
 			},
