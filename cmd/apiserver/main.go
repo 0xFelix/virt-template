@@ -5,7 +5,6 @@ import (
 
 	"github.com/spf13/pflag"
 	"k8s.io/klog/v2"
-
 	"kubevirt.io/client-go/kubecli"
 
 	templateapi "kubevirt.io/virt-template/api"
@@ -39,6 +38,7 @@ func main() {
 		subresourcesv1alpha1.GroupVersion: {
 			templateapi.PluralResourceName:              virtualmachinetemplate.NewDummyREST(),
 			templateapi.PluralResourceName + "/process": virtualmachinetemplate.NewProcessREST(client),
+			templateapi.PluralResourceName + "/create":  virtualmachinetemplate.NewCreateREST(client, virtClient),
 		},
 	}
 
