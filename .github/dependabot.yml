@@ -1,0 +1,40 @@
+version: 2
+updates:
+  # Root Go module - monitors the main go.mod file
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      go-modules:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 3
+    labels:
+      - "release-note-none"
+
+  # API Go module - monitors api/go.mod
+  - package-ecosystem: "gomod"
+    directory: "/api"
+    schedule:
+      interval: "weekly"
+    groups:
+      go-modules:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 3
+    labels:
+      - "release-note-none"
+
+  # GitHub Actions - monitors workflow files for action version updates
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 3
+    labels:
+      - "release-note-none"
