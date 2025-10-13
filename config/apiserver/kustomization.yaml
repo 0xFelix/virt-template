@@ -1,0 +1,4 @@
+resources:
+- apiserver.yaml
+- apiservice.yaml
+- service.yaml

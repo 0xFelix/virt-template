@@ -1,0 +1,41 @@
+name: dependabot vendor
+
+# Automatically runs 'make vendor' on Dependabot PRs and amends the changes
+# to Dependabot's commit to keep vendored dependencies up to date.
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  vendor:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
+      - name: Run make vendor
+        run: make vendor
+
+      - name: Amend commit and push if changes
+        run: |
+          if ! git diff --exit-code; then
+            git config user.name "dependabot[bot]"
+            git config user.email "49699333+dependabot[bot]@users.noreply.github.com"
+            git add .
+            git commit --amend --no-edit
+            git push --force-with-lease
+          fi
