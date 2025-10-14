@@ -1,0 +1,47 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":gitSignOff"
+  ],
+  "baseBranchPatterns": [
+    "main",
+    "/^release-v([0-9]+\\.([0-9]+))$/"
+  ],
+  "prConcurrentLimit": 3,
+  "labels": [
+    "release-note-none"
+  ],
+  "enabledManagers": ["gomod"],
+  "packageRules": [
+    {
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "Go dependencies"
+    },
+    {
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "groupName": "Go dependencies (major)"
+    }
+  ],
+  "constraints": {
+    "go": "1.24"
+  },
+  "postUpdateOptions": [
+    "gomodTidy",
+    "gomodUpdateImportPaths"
+  ],
+  "ignorePaths": [
+    "**/vendor/**"
+  ]
+}
