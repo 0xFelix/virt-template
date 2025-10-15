@@ -2918,9 +2918,9 @@ k8s.io/kms/apis/v1beta1
 k8s.io/kms/apis/v2
 k8s.io/kms/pkg/service
 k8s.io/kms/pkg/util
-# k8s.io/kube-openapi v0.0.0-20250905212525-66792eed8611 => k8s.io/kube-openapi v0.0.0-20250905212525-66792eed8611
+# k8s.io/kube-openapi v0.0.0-20250905212525-66792eed8611 => k8s.io/kube-openapi v0.0.0-20250910181357-589584f1c912
 ## explicit; go 1.23.0
-# k8s.io/kube-openapi v0.31.0 => k8s.io/kube-openapi v0.0.0-20250905212525-66792eed8611
+# k8s.io/kube-openapi v0.31.0 => k8s.io/kube-openapi v0.0.0-20250910181357-589584f1c912
 ## explicit; go 1.23.0
 k8s.io/kube-openapi/cmd/openapi-gen
 k8s.io/kube-openapi/cmd/openapi-gen/args
@@ -3337,5 +3337,5 @@ sigs.k8s.io/yaml
 sigs.k8s.io/yaml/goyaml.v2
 sigs.k8s.io/yaml/goyaml.v3
 # google.golang.org/genproto => google.golang.org/genproto v0.0.0-20250303144028-a0af3efb3deb
-# k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20250905212525-66792eed8611
+# k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20250910181357-589584f1c912
 # kubevirt.io/client-go => github.com/0xfelix/kubevirt-client-go v0.0.0-20250911115544-0de0a14ecd48

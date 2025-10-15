@@ -397,7 +397,7 @@ replace (
 replace google.golang.org/genproto => google.golang.org/genproto v0.0.0-20250303144028-a0af3efb3deb
 
 // Fix compatibility with imports pulled in by kubevirt.io/client-go
-replace k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20250905212525-66792eed8611
+replace k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20250910181357-589584f1c912
 
 // Fix compatibility with kubevirt.io/client-go by removing the mocked client
 // that requires older API versions that are no longer present.
