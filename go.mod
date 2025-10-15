@@ -6,7 +6,7 @@ require (
 	github.com/emicklei/go-restful/v3 v3.13.0
 	github.com/onsi/ginkgo/v2 v2.26.0
 	github.com/onsi/gomega v1.38.2
-	github.com/openshift/api v0.0.0-20251010150145-1f788b8d634d
+	github.com/openshift/api v0.0.0-20251015095338-264e80a2b6e7
 	github.com/openshift/client-go v0.0.0-20210112165513-ebc401615f47
 	github.com/spf13/cobra v1.10.1
 	github.com/spf13/pflag v1.0.10
