@@ -402,7 +402,7 @@ replace k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20250905212525-66792ee
 // Fix compatibility with kubevirt.io/client-go by removing the mocked client
 // that requires older API versions that are no longer present.
 // TODO: Remove this workaround once fixed upstream
-replace kubevirt.io/client-go => github.com/0xfelix/kubevirt-client-go v0.0.0-20250911115544-0de0a14ecd48
+replace kubevirt.io/client-go => github.com/0xfelix/kubevirt-client-go 13222b8301a3
 
 tool (
 	github.com/cert-manager/cmctl/v2
