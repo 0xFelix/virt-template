@@ -350,8 +350,8 @@ require (
 	golang.org/x/time v0.14.0 // indirect
 	golang.org/x/tools v0.38.0 // indirect
 	gomodules.xyz/jsonpatch/v2 v2.5.0 // indirect
-	google.golang.org/genproto/googleapis/api v0.0.0-20251007200510-49b9836ed3ff // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20251007200510-49b9836ed3ff // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20251014184007-4626949a642f // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20251014184007-4626949a642f // indirect
 	google.golang.org/grpc v1.76.0 // indirect
 	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect
@@ -394,7 +394,7 @@ replace (
 )
 
 // Fix compatibility with imports pulled in by kubevirt.io/api
-replace google.golang.org/genproto => google.golang.org/genproto v0.0.0-20250303144028-a0af3efb3deb
+replace google.golang.org/genproto => google.golang.org/genproto v0.0.0-20251022142026-3a174f9686a8
 
 // Fix compatibility with imports pulled in by kubevirt.io/client-go
 replace k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20250905212525-66792eed8611
