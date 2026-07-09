@@ -4,25 +4,25 @@ go 1.24.8
 
 require (
 	github.com/emicklei/go-restful/v3 v3.13.0
-	github.com/onsi/ginkgo/v2 v2.26.0
-	github.com/onsi/gomega v1.38.2
+	github.com/onsi/ginkgo/v2 v2.32.0
+	github.com/onsi/gomega v1.42.1
 	github.com/openshift/api v0.0.0-20251010150145-1f788b8d634d
 	github.com/openshift/client-go v0.0.0-20210112165513-ebc401615f47
-	github.com/spf13/cobra v1.10.1
+	github.com/spf13/cobra v1.10.2
 	github.com/spf13/pflag v1.0.10
-	k8s.io/api v0.34.1
-	k8s.io/apimachinery v0.34.1
-	k8s.io/apiserver v0.34.1
-	k8s.io/client-go v0.34.1
-	k8s.io/klog/v2 v2.130.1
+	k8s.io/api v0.36.2
+	k8s.io/apimachinery v0.36.2
+	k8s.io/apiserver v0.36.2
+	k8s.io/client-go v0.36.2
+	k8s.io/klog/v2 v2.140.0
 	k8s.io/kube-openapi v0.31.0
-	k8s.io/utils v0.0.0-20251002143259-bc988d571ff4
-	kubevirt.io/api v1.6.2
-	kubevirt.io/client-go v1.6.2
+	k8s.io/utils v0.0.0-20260707023825-cf1189d6abe3
+	kubevirt.io/api v1.8.4
+	kubevirt.io/client-go v1.8.4
 	kubevirt.io/qe-tools v0.1.8
 	kubevirt.io/virt-template-api v0.0.0-00010101000000-000000000000
 	kubevirt.io/virt-template-client-go v0.0.0-00010101000000-000000000000
-	sigs.k8s.io/controller-runtime v0.22.3
+	sigs.k8s.io/controller-runtime v0.24.1
 	sigs.k8s.io/yaml v1.6.0
 )
 
@@ -79,7 +79,7 @@ require (
 	github.com/ccojocar/zxcvbn-go v1.0.4 // indirect
 	github.com/cenkalti/backoff/v5 v5.0.3 // indirect
 	github.com/cert-manager/cert-manager v1.18.2 // indirect
-	github.com/cert-manager/cmctl/v2 v2.3.0 // indirect
+	github.com/cert-manager/cmctl/v2 v2.5.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/chai2010/gettext-go v1.0.2 // indirect
 	github.com/charithe/durationcheck v0.0.10 // indirect
@@ -159,7 +159,7 @@ require (
 	github.com/golangci/dupl v0.0.0-20250308024227-f665c8d69b32 // indirect
 	github.com/golangci/go-printf-func-name v0.1.1 // indirect
 	github.com/golangci/gofmt v0.0.0-20250106114630-d62b90e6713d // indirect
-	github.com/golangci/golangci-lint/v2 v2.5.0 // indirect
+	github.com/golangci/golangci-lint/v2 v2.12.2 // indirect
 	github.com/golangci/golines v0.0.0-20250217134842-442fd0091d95 // indirect
 	github.com/golangci/misspell v0.7.0 // indirect
 	github.com/golangci/nilerr v0.0.0-20250918000102-015671e622fe // indirect
@@ -364,7 +364,7 @@ require (
 	honnef.co/go/tools v0.6.1 // indirect
 	k8s.io/apiextensions-apiserver v0.34.1 // indirect
 	k8s.io/cli-runtime v0.33.2 // indirect
-	k8s.io/code-generator v0.34.1 // indirect
+	k8s.io/code-generator v0.36.2 // indirect
 	k8s.io/component-base v0.34.1 // indirect
 	k8s.io/component-helpers v0.33.2 // indirect
 	k8s.io/gengo/v2 v2.0.0-20250604051438-85fd79dbfd9f // indirect
@@ -372,17 +372,17 @@ require (
 	k8s.io/kubectl v0.33.2 // indirect
 	kubevirt.io/containerized-data-importer-api v1.63.1 // indirect
 	kubevirt.io/controller-lifecycle-operator-sdk/api v0.2.4 // indirect
-	mvdan.cc/gofumpt v0.9.1 // indirect
+	mvdan.cc/gofumpt v0.10.0 // indirect
 	mvdan.cc/unparam v0.0.0-20250301125049-0df0534333a4 // indirect
 	oras.land/oras-go/v2 v2.6.0 // indirect
 	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.33.0 // indirect
-	sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20251010212459-3e8b2594ffc4 // indirect
-	sigs.k8s.io/controller-tools v0.18.0 // indirect
+	sigs.k8s.io/controller-runtime/tools/setup-envtest v0.24.1 // indirect
+	sigs.k8s.io/controller-tools v0.21.0 // indirect
 	sigs.k8s.io/gateway-api v1.3.0 // indirect
 	sigs.k8s.io/json v0.0.0-20250730193827-2d320260d730 // indirect
 	sigs.k8s.io/kustomize/api v0.19.0 // indirect
 	sigs.k8s.io/kustomize/cmd/config v0.19.0 // indirect
-	sigs.k8s.io/kustomize/kustomize/v5 v5.6.0 // indirect
+	sigs.k8s.io/kustomize/kustomize/v5 v5.8.1 // indirect
 	sigs.k8s.io/kustomize/kyaml v0.19.0 // indirect
 	sigs.k8s.io/randfill v1.0.0 // indirect
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.0 // indirect
